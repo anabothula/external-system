@@ -29,7 +29,7 @@ const addStudent = (req, res) => {
 				[name, email, age, dob],
 				(error, results) => {
 					if (error) throw error;
-					res.status(201).send("Student Created !");
+					res.status(201).json(results.rows);
 				}
 			);
 		}

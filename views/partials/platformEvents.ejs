@@ -1,0 +1,22 @@
+<script>
+	const cookies = parseCookie(document.cookie);
+    console.log(cookies);
+
+	const conn = new jsforce.Connection({
+		instanceUrl:
+			"https://resourceful-unicorn-24xtue-dev-ed.my.salesforce.com",
+		accessToken: cookies.accessToken,
+	});
+
+	function parseCookie(str){
+		return str
+			.split(";")
+			.map((v) => v.split("="))
+			.reduce((acc, v) => {
+				acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(
+					v[1].trim()
+				);
+				return acc;
+			}, {});
+    }
+</script>

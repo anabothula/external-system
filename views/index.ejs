@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('./partials/head') %> 
+		<title>Integration <%= title %></title>
+	</head>
+	<body>        
+        <% if (loggedin === false) { %>
+            <a href="/auth">Log in</a>
+        <% } else { %>
+            <%- include('./partials/navbar') %> 
+        <% } %> 
+    </body>
+</html>

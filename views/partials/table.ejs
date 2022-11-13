@@ -1,0 +1,25 @@
+<table
+	class="slds-table slds-table_cell-buffer slds-table_bordered"
+	aria-label="Example default base table of Opportunities"
+>
+	<thead>
+		<tr class="slds-line-height_reset">
+            <% columns.forEach(column => { %>             
+                <th class="" scope="col">
+                    <div class="slds-truncate" title=<%= column %> ><%= column %></div>
+                </th>
+            <% }) %>			
+		</tr>
+	</thead>
+	<tbody>
+        <% data.forEach(ele => { %>
+            <tr class="slds-hint-parent">   
+                <% columns.forEach(column => { %>             
+                    <td>
+                        <div class="slds-truncate" title=<%= ele[column] %>><%= ele[column] %></div>
+                    </td>                   
+                <% }) %>	
+            </tr>		
+        <% }) %>
+	</tbody>
+</table>
